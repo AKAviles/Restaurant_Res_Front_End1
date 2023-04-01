@@ -6,7 +6,7 @@ pipeline {
 
     environment {
         AWS_ECR_URL = '014920475271.dkr.ecr.us-east-1.amazonaws.com/quote-machine'
-        AWS_ECR_NAME = 'restaurant-reservation/frontend'
+        AWS_ECR_NAME = 'restaurant-reservation/web'
         
     }
 
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://014920475271.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:aws-resources') {
-                        docker.image("restaurant-reservation/frontend").push('latest')
+                        docker.image("${AWS_ECR_NAME}").push('latest')
                     }
                 }
             }
