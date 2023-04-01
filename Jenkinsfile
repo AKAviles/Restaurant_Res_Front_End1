@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://014920475271.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:aws-resources') {
-                        docker.image("${AWS_ECR_NAME}").push('latest')
+                        docker.image("restaurant-reservation/frontend").push('latest')
                     }
                 }
             }
