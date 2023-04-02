@@ -1,0 +1,22 @@
+metadata:
+  name: restaurant-reservation-web
+
+nameOverride: "restaurant-reservation-web"
+fullnameOverride: "restaurant-reservation-web"
+
+replicaCount: 1
+revisionCount: 1
+
+deploy: spec
+
+image:
+  repository: repo
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: NodePort
+  port: 3000
+
+spec:
+  nodeName: ip-172-31-75-251.ec2.internal
