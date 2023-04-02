@@ -7,8 +7,6 @@ fullnameOverride: "restaurant-reservation-web"
 replicaCount: 1
 revisionCount: 1
 
-deploy: spec
-
 image:
   repository: repo
   pullPolicy: IfNotPresent
